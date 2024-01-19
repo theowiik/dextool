@@ -885,8 +885,11 @@ struct Analyze {
 
             try {
                 log.infof("RUNNING A");
-                toMutateAst(tu.cursor, fio, valLoc);
+                auto tempRes = toMutateAst(tu.cursor, fio, valLoc);
                 log.infof("RUNNING B");
+                auto tempAst = tempRes.ast;
+                log.infof("RUNNING C");
+                log.infof("tempRes is %s", tempRes);
             } catch (Exception e) {
                 log.infof("RUNNING C");
                 log.infof("Failed to analyze %s. %s", e.msg);
