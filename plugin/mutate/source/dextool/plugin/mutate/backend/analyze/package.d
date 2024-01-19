@@ -883,8 +883,13 @@ struct Analyze {
                 }
             }
 
+            log.infof("got to A");
             auto res = toMutateAst(tu.cursor, fio, valLoc);
+            log.infof("res: %s", res);
+
             ast = res.ast;
+            log.infof("got to B");
+
             saveDependencies(commandsForFileToAnalyze.flags, result.root, res.dependencies);
             log!"analyze.pass_clang".trace(ast.get.toString);
         }
