@@ -890,16 +890,9 @@ struct Analyze {
                 auto tempAst = tempRes.ast;
                 log.infof("RUNNING C");
                 log.infof("tempRes is %s", tempRes);
+                log.infof("tempAst is %s", tempAst);
             } catch (Exception e) {
                 log.infof("RUNNING E");
-                log.infof("Failed to analyze %s. %s", e.msg);
-            } catch (Error e) {
-                log.infof("RUNNING F");
-                log.infof("SOME ERROR OCCURRED");
-                log.infof("Failed to analyze %s. %s", e.msg);
-            } catch (Throwable e) {
-                log.infof("RUNNING G");
-                log.infof("SOME THROWABLE OCCURRED");
                 log.infof("Failed to analyze %s. %s", e.msg);
             }
 
