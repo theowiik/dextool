@@ -56,16 +56,25 @@ shared static this() {
 /** Translate a clang AST to a mutation AST.
  */
 ClangResult toMutateAst(const Cursor root, FilesysIO fio, ValidateLoc vloc) @safe {
+    log.infof("XYZ A");
     import libclang_ast.ast;
+    log.infof("XYZ B");
 
     auto visitor = new BaseVisitor(fio, vloc);
+    log.infof("XYZ C");
     scope (exit)
         visitor.dispose;
+
+    log.infof("XYZ D");
     auto ast = ClangAST!BaseVisitor(root);
+    log.infof("XYZ E");
     ast.accept(visitor);
+    log.infof("XYZ F");
     visitor.ast.get.releaseCache;
+    log.infof("XYZ G");
 
     auto rval = ClangResult(visitor.ast, visitor.includes.data);
+    log.infof("XYZ H");
     return rval;
 }
 
