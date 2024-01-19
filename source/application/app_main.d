@@ -179,7 +179,7 @@ int rmain(string[] args) nothrow {
         confLogger(parsed.confLog);
 
         exit_status = runPlugin(parsed, args);
-        logger.errorf("exit status: %s", exit_status');
+        logger.errorf("exit status: %s", exit_status);
     } catch (Exception ex) {
         logger.trace(ex).collectException;
         exit_status = ExitStatusType.Errors;
