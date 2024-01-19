@@ -888,7 +888,7 @@ struct Analyze {
                 toMutateAst(tu.cursor, fio, valLoc);
                 log.infof("RUNNING B");
             } catch (Exception e) {
-                lof.infof("RUNNING C");
+                log.infof("RUNNING C");
                 log.infof("Failed to analyze %s. %s", e.msg);
             }
 
