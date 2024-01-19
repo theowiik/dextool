@@ -891,7 +891,15 @@ struct Analyze {
                 log.infof("RUNNING C");
                 log.infof("tempRes is %s", tempRes);
             } catch (Exception e) {
-                log.infof("RUNNING C");
+                log.infof("RUNNING E");
+                log.infof("Failed to analyze %s. %s", e.msg);
+            } catch (Error e) {
+                log.infof("RUNNING F");
+                log.infof("SOME ERROR OCCURRED");
+                log.infof("Failed to analyze %s. %s", e.msg);
+            } catch (Throwable e) {
+                log.infof("RUNNING G");
+                log.infof("SOME THROWABLE OCCURRED");
                 log.infof("Failed to analyze %s. %s", e.msg);
             }
 
